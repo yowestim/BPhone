@@ -20,10 +20,6 @@ class CreateModelItemsTable extends Migration
             $table->string('item_price', 50);
             $table->string('item_status', 50);
             $table->string('item_description', 50);
-            $table->integer('id_color')->unsigned();
-            $table->foreign('id_color')->references('id')->on('color');
-            $table->integer('id_merk')->unsigned();
-            $table->foreign('id_merk')->references('id')->on('merk');
             $table->timestamps();
         });
     }

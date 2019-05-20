@@ -15,12 +15,8 @@ class CreateModelTransactionsTable extends Migration
     {
         Schema::create('transaction', function (Blueprint $table) {
             $table->bigIncrements('id_transaction');
-            $table->string('jumlah')->index();
-            $table->string('alamat');
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('user');
-            $table->integer('id_item')->unsigned();
-            $table->foreign('id_item')->references('id')->on('item');
+            $table->string('jumlah', 60);
+            $table->string('alamat', 60);
             $table->timestamps();
         });
     }
