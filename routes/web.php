@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/Dashboard', "DashboardController@index");
 Route::get('/Admin', "DashboardController@adminLogin");
 Route::post('/Admin', "DashboardController@postLogin")->name('post.login');
+// Route::
