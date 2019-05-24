@@ -11,8 +11,10 @@ class AdminController extends Controller
     {
         $dashboard = ModelUser::all();
         $loginStatus = $request->session()->has('loginStatus');
+        $dataLogin = $request->session()->has('username');
+        
         if ($loginStatus == "true"){
-            return view('dashboardAdmin', ['ModelUser'=>$dashboard]);
+            return view('dashboardAdmin', ['ModelUser'=>$dashboard,$dataLogin]);
         } else{
             return redirect('/Admin');
         }
