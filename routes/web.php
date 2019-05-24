@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Route::get('/Dashboard', "DashboardController@index");
 Route::get('/Admin', "DashboardController@adminLogin");
-Route::post('/Admin', "DashboardController@postLogin")->name('post.login');
+Route::post('/loginPost', "DashboardController@postLogin");
+Route::get('/Admin/Dashboard', "AdminController@index");
+Route::get('/Admin/Dashboard/Logout', "AdminController@logout");
+Route::get('/Admin/Item', "AdminController@addItem");
