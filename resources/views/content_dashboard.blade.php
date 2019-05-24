@@ -1,3 +1,4 @@
+@include('header')
 <div class="panel panel-headline">
     <div class="panel-heading">
         <h3 class="panel-title">Weekly Overview</h3>
@@ -63,3 +64,4 @@
         </div>
     </div>
 </div>
+@include('footer')
