@@ -19,7 +19,7 @@ class DashboardController extends Controller
         
         $loginStatus = $request->session()->has('loginStatus');
         if ($loginStatus == "true"){
-            return redirect('/AdminDashboard');
+            return redirect('/Admin/Dashboard');
         } else{
             return view('login_admin', ['ModelUser'=>$dashboard , ' ']);
         }
@@ -32,7 +32,7 @@ class DashboardController extends Controller
 
         if(!Auth::attempt(['username'=>$username,'password'=>$password])){
             $request->session()->put('loginStatus', 'true');
-            return redirect('/AdminDashboard');
+            return redirect('/Admin/Dashboard');
         }else{
             return redirect('/Admin');
         }

@@ -101,7 +101,7 @@
 			<div class="main-content">
 				<div class="container-fluid">
 					<!-- OVERVIEW -->
-					@include('content_dashboard')
+					@include({{$view}})
 					<!-- END OVERVIEW -->
 				</div>
 			</div>
