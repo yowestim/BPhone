@@ -33,14 +33,15 @@
 								<div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
-							<form class="form-auth-small" action="{{route('login')}}" method="POST">
+							<form class="form-auth-small" action="{{ url('/loginPost') }}" method="POST">
+								{{ csrf_field() }}
 								<div class="form-group">
 									<label for="signin-username" class="control-label sr-only">Username</label>
-									<input type="text" class="form-control" id="signin-username" placeholder="Username">
+									<input type="text" class="form-control" name="username" placeholder="Username">
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Password</label>
-									<input type="password" class="form-control" id="signin-password" placeholder="Password">
+									<input type="password" class="form-control" name="password" placeholder="Password">
 								</div>
 								<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
 							</form>
