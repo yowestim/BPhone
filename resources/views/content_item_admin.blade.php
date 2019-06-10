@@ -1,6 +1,32 @@
 @include('header')
+<script>
+        function move() {
+          var elem = document.getElementById("myBar");   
+          var width = 0.1;
+          var id = setInterval(frame, 3);
+          function frame() {
+            if (width >= 100) {
+              clearInterval(id);
+            } else {
+              width++; 
+              elem.style.width = width + '%'; 
+            }
+          }
+        }
+</script>
+<style>
+#myBar {
+  width: 0,1%;
+  height: 10px;
+  background-color: green;
+}
+</style>
+<div class="progress progress-xs" style="margin-bottom:-0.5%">
+        <div id="myBar" class="progress-bar progress-bar-success">
+        </div>
+</div>
 <div class="panel">
-        <button type="button" class="btn btn-warning" style="float:right; margin-top:1.5%; position:relative; margin-right:2.5%; z-index:90;"><i class="fa fa-trash"></i>&nbsp&nbspAdd&nbsp</button>
+        <button type="button" onclick="move()" class="btn btn-warning" style="float:right; margin-top:1.5%; position:relative; margin-right:2.5%; z-index:90;"><i class="fa fa-plus"></i>&nbsp&nbspAdd&nbsp</button>
         <div class="panel-heading" style="z-index:1;">
             <h3 class="panel-title">ADD Smarthphone</h3>
         </div>
@@ -26,7 +52,7 @@
                 <option value="merk1">apple</option>
             </select>
             <br>
-            <button type="button" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
+            <button type="button" onclick="move()" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
         </div>
     </div>
     @include('footer')
