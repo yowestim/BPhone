@@ -17,10 +17,10 @@ class CreateModelTransactionsTable extends Migration
             $table->bigIncrements('id_transaction');
             $table->string('total', 20);
             $table->string('address', 60);
-            // $table->integer('user_id')->unsigned();
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            // $table->integer('item_id')->unsigned();
-            // $table->foreign('item_id')->references('id')->on('item')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+	        $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('item_id');
+            $table->foreign('item_id')->references('id_item')->on('item');
             $table->timestamps();
         });
     }
