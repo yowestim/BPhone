@@ -1,36 +1,32 @@
 @include('header')
 <div class="panel">
-        <div class="panel-heading">
+        <button type="button" class="btn btn-warning" style="float:right; margin-top:1.5%; position:relative; margin-right:2.5%; z-index:90;"><i class="fa fa-trash"></i>&nbsp&nbspAdd&nbsp</button>
+        <div class="panel-heading" style="z-index:1;">
             <h3 class="panel-title">ADD Smarthphone</h3>
         </div>
         <div class="panel-body">
-            <div class="input-group">
-                <input class="form-control" type="text">
-                <span class="input-group-btn"><button class="btn btn-primary" type="button">Go!</button></span>
-            </div>
+                <input class="form-control" type="text" placeholder="Smarthphone Name">
             <br>
-            <div class="input-group">
-                <span class="input-group-btn">
-    <button class="btn btn-primary" type="button">Go!</button>
-</span>
-                <input class="form-control" type="text">
-            </div>
+                <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" placeholder="Quantity">
             <br>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input class="form-control" placeholder="Username" type="text">
-            </div>
+                <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" placeholder="Price">
             <br>
-            <div class="input-group">
-                <input class="form-control" placeholder="Username" type="text">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-            </div>
+                <input class="form-control" type="text" readonly="readonly" placeholder="Status">
             <br>
-            <div class="input-group">
-                <span class="input-group-addon">$</span>
-                <input class="form-control" type="text">
-                <span class="input-group-addon">.00</span>
-            </div>
+
+                <textarea class="form-control" type="text" placeholder="Description"></textarea>
+            <br>
+            <select class="form-control">
+                <option value="color">red</option>
+                <option value="color1">blue</option>
+            </select>
+            <br>
+            <select class="form-control">
+                <option value="merk">samsung</option>
+                <option value="merk1">apple</option>
+            </select>
+            <br>
+            <button type="button" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
         </div>
     </div>
     @include('footer')
