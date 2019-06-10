@@ -19,6 +19,11 @@ class ItemController extends Controller
         }
     }
 
+    public function addItem()
+    {
+        return view('content_item_add_admin', );
+    }
+
     public function logout(Request $request)
     {
         $request->session()->forget('loginStatus');

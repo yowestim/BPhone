@@ -1,13 +1,42 @@
 @include('header')
 <div class="panel">
-        <button type="button" class="btn btn-warning" style="float:right; margin-top:1.5%; position:relative; margin-right:2.5%; z-index:90;"><i class="fa fa-trash"></i>&nbsp&nbspAdd&nbsp</button>
-        <div class="panel-heading">
-            <h3 class="panel-title">ADD Color</h3>
-        </div>
-        <div class="panel-body">
-                <input class="form-control" type="text" placeholder="Color">
-                <br>
-                <button type="button" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
-        </div>
+    <div class="panel-heading">
+        <h3 class="panel-title">ADD Smarthphone</h3>
     </div>
-    @include('footer')
+    <div class="panel-body">
+            <input class="form-control" type="text" placeholder="Color">
+            <br>
+            <button type="button" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Steve</td>
+                        <td>Jobs</td>
+                        <td>@steve</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Simon</td>
+                        <td>Philips</td>
+                        <td>@simon</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Jane</td>
+                        <td>Doe</td>
+                        <td>@jane</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+@include('footer')
