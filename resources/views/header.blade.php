@@ -86,8 +86,8 @@
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-list"></i> <span>Category</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-login.html" class="">Color</a></li>
-									<li><a href="page-lockscreen.html" class="">Mark</a></li>
+									<li><a href="{{URL('/Admin/Color')}}" class="">Color</a></li>
+									<li><a href="{{URL('/Admin/Mark')}}" class="">Mark</a></li>
 								</ul>
 							</div>
 						</li>
