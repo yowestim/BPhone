@@ -23,5 +23,5 @@ Route::get('/Admin/Dashboard', "AdminController@index");
 Route::get('/Admin/Logout', "AdminController@logout");
 
 Route::get('/Admin/Item', "ItemController@index");
-Route::get('/Admin/Color', "ItemController@index");
-Route::get('/Admin/Mark', "ItemController@index");
+Route::get('/Admin/Color', "ColorController@index");
+Route::get('/Admin/Mark', "MerkController@index");
