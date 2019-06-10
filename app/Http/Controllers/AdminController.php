@@ -13,7 +13,7 @@ class AdminController extends Controller
         $loginStatus = $request->session()->has('loginStatus');
 
         if ($loginStatus == "true"){
-            return view('content_dashboard', ['ModelUser'=>$dashboard]);
+            return view('content_dashboard_admin', ['ModelUser'=>$dashboard]);
         } else{
             return redirect('/Admin');
         }

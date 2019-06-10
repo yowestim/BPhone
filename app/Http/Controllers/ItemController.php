@@ -13,7 +13,7 @@ class ItemController extends Controller
         $loginStatus = $request->session()->has('loginStatus');
 
         if ($loginStatus == "true"){
-            return view('content_item', ['ModelUser'=>$item]);
+            return view('content_item_admin', ['ModelUser'=>$item]);
         } else{
             return redirect('/Admin');
         }
