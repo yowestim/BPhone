@@ -9,34 +9,22 @@
             <input class="form-control" style="margin-bottom:5px" name="color" type="text" placeholder="Color">
             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
         </form>
-            <table class="table">
+            <table class="table"  style="margin-top:50px">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Id</th>
+                        <th>Color Name</th>
+                        <th class="col-md-2">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Steve</td>
-                        <td>Jobs</td>
-                        <td>@steve</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Simon</td>
-                        <td>Philips</td>
-                        <td>@simon</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Jane</td>
-                        <td>Doe</td>
-                        <td>@jane</td>
-                    </tr>
+                    @foreach ($dataColor as $color)     
+                        <tr>
+                            <td>{{$color->id_color}}</td>
+                            <td>{{$color->color_name}}</td>
+                            <td><button class="btn btn-danger col-sm-1"><i style="padding-right:-10px" class="fa fa-trash"></i></button></td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

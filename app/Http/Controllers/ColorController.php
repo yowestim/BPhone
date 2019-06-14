@@ -12,10 +12,11 @@ class ColorController extends Controller
     public function index(Request $request)
     {
         $item = ModelUser::all();
+        $dataColor = ModelColor::all();
         $loginStatus = $request->session()->has('loginStatus');
 
         if ($loginStatus == "true"){
-            return view('content_color_admin', ['ModelUser'=>$item]);
+            return view('content_color_admin', compact('dataColor'));
         } else{
             return redirect('/Admin');
         }
