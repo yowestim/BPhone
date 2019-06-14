@@ -6,7 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelColor extends Model
 {
-    protected $tables = 'color';
-
-
+    protected $table = 'color';
 }

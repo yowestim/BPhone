@@ -22,6 +22,7 @@ Route::post('/loginPost', "DashboardController@postLogin");
 Route::get('/Admin/Dashboard', "AdminController@index");
 Route::get('/Admin/Logout', "AdminController@logout");
 
+Route::post('/Admin/ColorAdd', "ColorController@addColor");
 Route::get('/Admin/Item', "ItemController@index");
 Route::get('/Admin/Item/Add', "ItemController@addItem");
 Route::get('/Admin/Color', "ColorController@index");

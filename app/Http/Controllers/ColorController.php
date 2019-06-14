@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ModelUser;
+use App\ModelColor;
+use DB;
 
 class ColorController extends Controller
 {
@@ -19,9 +21,12 @@ class ColorController extends Controller
         }
     }
 
-    public function logout(Request $request)
+    public function addColor(Request $request)
     {
-        $request->session()->forget('loginStatus');
-        return redirect('/Admin');
+        $data = new ModelColor();
+        $data->color_name=$request->color;
+        $data->save();
+        return redirect('/Admin/Color');
     }
+
 }

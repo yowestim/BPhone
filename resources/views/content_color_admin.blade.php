@@ -4,9 +4,11 @@
         <h3 class="panel-title">ADD Smarthphone</h3>
     </div>
     <div class="panel-body">
-            <input class="form-control" type="text" placeholder="Color">
-            <br>
-            <button type="button" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
+        <form  method="POST" action="ColorAdd" >
+            {{ csrf_field() }}
+            <input class="form-control" style="margin-bottom:5px" name="color" type="text" placeholder="Color">
+            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
+        </form>
             <table class="table">
                 <thead>
                     <tr>
