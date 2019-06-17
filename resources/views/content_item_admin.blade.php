@@ -9,31 +9,27 @@
               <table class="table">
                   <thead>
                       <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
+                          <th>Id</th>
+                          <th>Name</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Status</th>
+                          <th>Description</th>
+                          <th>Action</th>
                       </tr>
                   </thead>
                   <tbody>
-                      <tr>
-                          <td>1</td>
-                          <td>Steve</td>
-                          <td>Jobs</td>
-                          <td>@steve</td>
-                      </tr>
-                      <tr>
-                          <td>2</td>
-                          <td>Simon</td>
-                          <td>Philips</td>
-                          <td>@simon</td>
-                      </tr>
-                      <tr>
-                          <td>3</td>
-                          <td>Jane</td>
-                          <td>Doe</td>
-                          <td>@jane</td>
-                      </tr>
+                      @foreach ($item as $item)
+                        <tr>
+                            <td>{{$item->id_item}}</td>
+                            <td>{{$item->item_name}}</td>
+                            <td>{{$item->item_total}}</td>
+                            <td>{{$item->item_price}}</td>
+                            <td>{{$item->item_status}}</td>
+                            <td>{{$item->item_description}}</td>
+                            <td>{{$item->id_item}}</td>
+                        </tr>
+                      @endforeach
                   </tbody>
               </table>
           </div>

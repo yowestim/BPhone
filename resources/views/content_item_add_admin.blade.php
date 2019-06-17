@@ -30,29 +30,33 @@
                 <h3 class="panel-title">ADD Smarthphone</h3>
             </div>
         <div class="panel-body">
-                <input class="form-control" type="text" placeholder="Smarthphone Name">
+        <form action="{{URL('/Admin/Item/AddProccess')}}" method="POST">
+          {{ csrf_field() }}
+                <input class="form-control" type="text" name="name" placeholder="Smarthphone Name">
               <br>
-                <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" placeholder="Quantity">
+                <input class="form-control" name="quantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" placeholder="Quantity">
               <br>
-                <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" placeholder="Price">
+                <input class="form-control" name="price" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" placeholder="Price">
               <br>
-                <input class="form-control" type="text" readonly="readonly" placeholder="Status">
+                <input class="form-control" type="text" name="status" readonly="readonly" placeholder="Status">
               <br>
-              
-                <textarea class="form-control" type="text" placeholder="Description"></textarea>
+                <textarea class="form-control" type="text" name="description" placeholder="Description"></textarea>
               <br>
-              <select class="form-control">
-                <option value="color">red</option>
-                <option value="color1">blue</option>
+              <select class="form-control" name="color">
+                  @foreach ($dataColor as $color)  
+                     <option value="{{$color->id_color}}">{{$color->color_name}}</option>
+                  @endforeach     
               </select>
               <br>
-              <select class="form-control">
-                <option value="merk">samsung</option>
-                <option value="merk1">apple</option>
+              <select class="form-control" name="merk">
+                @foreach ($dataMerk as $merk)  
+                  <option value="{{$merk->id_merk}}">{{$merk->merk_name}}</option>
+                @endforeach
               </select>
               <br>
-              <button type="button" onclick="move()" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
-              </div>
+              <button type="submit" onclick="move()" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
+          </form>
+        </div>
 </div>
 
 

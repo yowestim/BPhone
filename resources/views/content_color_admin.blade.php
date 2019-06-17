@@ -1,7 +1,7 @@
 @include('header')
 <div class="panel">
     <div class="panel-heading">
-        <h3 class="panel-title">ADD Smarthphone</h3>
+        <h3 class="panel-title">ADD Color</h3>
     </div>
     <div class="panel-body">
         <form  method="POST" action="ColorAdd" >

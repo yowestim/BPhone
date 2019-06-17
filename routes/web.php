@@ -24,6 +24,7 @@ Route::get('/Admin/Logout', "AdminController@logout");
 
 Route::get('/Admin/Item', "ItemController@index");
 Route::get('/Admin/Item/Add', "ItemController@addItem");
+Route::post('/Admin/Item/AddProccess', "ItemController@saveItem");
 
 Route::get('/Admin/Color', "ColorController@index");
 Route::post('/Admin/ColorAdd', "ColorController@addColor");
