@@ -18,7 +18,7 @@ class CreateModelTransactionsTable extends Migration
             $table->string('total', 20);
             $table->string('address', 60);
             $table->unsignedBigInteger('user_id');
-	        $table->foreign('user_id')->references('id')->on('users');
+	        $table->foreign('user_id')->references('id_users')->on('users');
             $table->unsignedBigInteger('item_id');
             $table->foreign('item_id')->references('id_item')->on('item');
             $table->timestamps();
