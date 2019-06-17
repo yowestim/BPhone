@@ -7,6 +7,7 @@
         <form  method="POST" action="ColorAdd" >
             {{ csrf_field() }}
             <input class="form-control" style="margin-bottom:5px" name="color" type="text" placeholder="Color">
+            <input class="form-control" style="margin-bottom:5px" name="hex_color" type="text" placeholder="Hex Color">
             <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
         </form>
             <table class="table"  style="margin-top:50px">
@@ -14,6 +15,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Color Name</th>
+                        <th>Color Hex</th>
                         <th class="col-md-2">Action</th>
                     </tr>
                 </thead>
@@ -22,6 +24,7 @@
                         <tr>
                             <td>{{$color->id_color}}</td>
                             <td>{{$color->color_name}}</td>
+                            <td>{{$color->hex_color}}</td>
                             <td><button class="btn btn-danger col-sm-1"><i style="padding-right:-10px" class="fa fa-trash"></i></button></td>
                         </tr>
                     @endforeach

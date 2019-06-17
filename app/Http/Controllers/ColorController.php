@@ -26,6 +26,7 @@ class ColorController extends Controller
     {
         $data = new ModelColor();
         $data->color_name=$request->color;
+        $data->hex_color=$request->hex_color;
         $data->save();
         return redirect('/Admin/Color');
     }

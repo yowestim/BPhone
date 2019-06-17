@@ -14,6 +14,8 @@
                           <th>Quantity</th>
                           <th>Price</th>
                           <th>Status</th>
+                          <th>Merk</th>
+                          <th>Color</th>
                           <th>Description</th>
                           <th>Action</th>
                       </tr>
@@ -26,6 +28,8 @@
                             <td>{{$item->item_total}}</td>
                             <td>{{$item->item_price}}</td>
                             <td>{{$item->item_status}}</td>
+                            <td>{{$item->merk_id}}</td>
+                            <td>{{$item->color_id}}</td>
                             <td>{{$item->item_description}}</td>
                             <td>{{$item->id_item}}</td>
                         </tr>

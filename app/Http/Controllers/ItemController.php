@@ -43,6 +43,8 @@ class ItemController extends Controller
         $data->item_price=$request->price;
         $data->item_status=$status;
         $data->item_description=$request->description;
+        $data->color_id=$request->color;
+        $data->merk_id=$request->merk;
         $data->save();
 
         return redirect('/Admin/Item');
