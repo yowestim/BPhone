@@ -12,4 +12,5 @@ class ModelItem extends Model
     //     return $this->belongsTo(ModelColor::class);
     // }
     protected $primaryKey = "id_item";
+    protected $fillable = ['item_name'];
 }

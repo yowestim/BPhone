@@ -70,12 +70,25 @@ class ItemController extends Controller
 
     public function saveItem(Request $request)
     {
+        $this->validate($request,[
+            'image' => 'required|image|mimes:png,jpg,jpeg'
+            ]);
         $data = new ModelItem();
-        $status = "Sold Out";
         if($data->item_total == "0"||$data->item_total == null){
             $status = "Ready";
         }
-        $data->item_name=$request->name;
+        $file = $request->file('image');
+        $extension = $file->getClientOriginalName();
+        $file->move('Item',$extension);
+
+        if(!$request == "0" || $request = null){
+            $status = "Ready";
+        }else{
+            $status = "Sold Out";
+        }
+
+        $data->item_name = $request->name;
+        $data->item_image=$extension;
         $data->item_total=$request->quantity;
         $data->item_price=$request->price;
         $data->item_status=$status;
@@ -83,7 +96,6 @@ class ItemController extends Controller
         $data->color_id=$request->color;
         $data->merk_id=$request->merk;
         $data->save();
-
         return redirect('/Admin/Item');
     }
 

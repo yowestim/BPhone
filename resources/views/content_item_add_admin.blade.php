@@ -30,8 +30,9 @@
                 <h3 class="panel-title">ADD Smarthphone</h3>
             </div>
         <div class="panel-body">
-        <form action="{{URL('/Admin/Item/AddProccess')}}" method="POST">
-          {{ csrf_field() }}
+        <form action="{{URL('/Admin/Item/AddProccess')}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input class="form-control" type="text" name="name" placeholder="Smarthphone Name">
               <br>
                 <input class="form-control" name="quantity" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="number" placeholder="Quantity">
@@ -54,7 +55,11 @@
                 @endforeach
               </select>
               <br>
-              <button type="submit" onclick="move()" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
+                <div class="input-group">
+										<input class="custom-file-input" name="image" type="file"> 
+									</div>
+              <br>
+              <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>&nbsp&nbspSave&nbsp</button>
           </form>
         </div>
 </div>

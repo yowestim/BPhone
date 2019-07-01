@@ -11,6 +11,7 @@
                       <tr>
                           <th>Id</th>
                           <th>Name</th>
+                          <th>Image</th>
                           <th>Quantity</th>
                           <th>Price</th>
                           <th>Status</th>
@@ -24,6 +25,7 @@
                       @foreach ($item as $item)
                         <tr>
                             <td>{{$item->id_item}}</td>
+                            <td class="col-md-1"><img height="70px" src="{{ url('/Item/'.$item->item_image) }}"></td>
                             <td>{{$item->item_name}}</td>
                             <td>{{$item->item_total}}</td>
                             <td>{{$item->item_price}}</td>
