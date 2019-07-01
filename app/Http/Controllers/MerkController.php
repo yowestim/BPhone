@@ -26,5 +26,14 @@ class MerkController extends Controller
         $data = new ModelMerk();
         $data->merk_name = $request->merk;
         $data->save();
-        return redirect('/Admin/Mark');    }
+        return redirect('/Admin/Mark');    
+    }
+
+    public function deleteMark($id)
+    {
+        $dataMerk = ModelMerk::where('id_merk', $id)->delete();
+
+        return redirect('/Admin/Mark');
+    }
+
 }

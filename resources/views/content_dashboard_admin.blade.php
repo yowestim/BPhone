@@ -1,17 +1,17 @@
 @include('header')
 <div class="panel panel-headline">
     <div class="panel-heading">
-        <h3 class="panel-title">Weekly Overview</h3>
-        <p class="panel-subtitle">Period: Oct 14, 2016 - Oct 21, 2016</p>
+        <h3 class="panel-title">Overview</h3>
+        <p class="panel-subtitle">Product Bphone</p>
     </div>
     <div class="panel-body">
         <div class="row">
             <div class="col-md-3">
                 <div class="metric">
-                    <span class="icon"><i class="fa fa-download"></i></span>
+                    <span class="icon"><i class="fa fa-mobile"></i></span>
                     <p>
                         <span class="number">1,252</span>
-                        <span class="title">Downloads</span>
+                        <span class="title">Item</span>
                     </p>
                 </div>
             </div>

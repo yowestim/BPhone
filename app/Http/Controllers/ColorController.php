@@ -31,4 +31,11 @@ class ColorController extends Controller
         return redirect('/Admin/Color');
     }
 
+    public function deleteColor($id)
+    {
+        $dataColor = ModelColor::where('id_color', $id)->delete();
+
+        return redirect('/Admin/Color');
+    }
+
 }

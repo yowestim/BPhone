@@ -25,7 +25,7 @@
                             <td>{{$color->id_color}}</td>
                             <td>{{$color->color_name}}</td>
                             <td>{{$color->hex_color}}</td>
-                            <td><button class="btn btn-danger col-sm-1"><i style="padding-right:-10px" class="fa fa-trash"></i></button></td>
+                            <td><a href="{{URL('/Admin/ColorDelete', $color->id_color)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -22,7 +22,7 @@
                                 <tr>
                                     <td>{{$merk->id_merk}}</td>
                                     <td>{{$merk->merk_name}}</td>
-                                    <td><button class="btn btn-danger col-sm-1"><i style="padding-right:-10px" class="fa fa-trash"></i></button></td>
+                                <td><a href="{{URL('/Admin/MarkDelete',$merk->id_merk)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                                 </tr>
                             @endforeach
                         </tbody>

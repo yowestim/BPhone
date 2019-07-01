@@ -31,7 +31,10 @@
                             <td>{{$item->merk_name}}</td>
                             <td>{{$item->color_name}}</td>                                
                             <td>{{$item->item_description}}</td>
-                            <td>{{$item->id_item}}</td>
+                            <td class="col-md-2">
+                                <a href="{{URL('/Admin/Item/Update', $item->id_item)}}" class="btn btn-primary"><span class="fa fa-pencil"></span></div>
+                                <a href="{{URL('/Admin/Item/Delete', $item->id_item)}}" class="btn btn-danger"><span class="fa fa-trash"></span></div>
+                            </td>
                         </tr>
                       @endforeach
                   </tbody>

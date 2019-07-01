@@ -24,10 +24,15 @@ Route::get('/Admin/Logout', "AdminController@logout");
 
 Route::get('/Admin/Item', "ItemController@index");
 Route::get('/Admin/Item/Add', "ItemController@addItem");
+Route::get('/Admin/Item/Update/{id}', "ItemController@updateItem");
 Route::post('/Admin/Item/AddProccess', "ItemController@saveItem");
+Route::post('/Admin/Item/Update/Save/{id}', "ItemController@updateItemSave");
+Route::get('/Admin/Item/Delete/{id}', "ItemController@deleteItem");
 
 Route::get('/Admin/Color', "ColorController@index");
 Route::post('/Admin/ColorAdd', "ColorController@addColor");
+Route::get('/Admin/ColorDelete/{id}', "ColorController@deleteColor");
 
 Route::get('/Admin/Mark', "MerkController@index");
 Route::post('/Admin/MarkAdd', "MerkController@addMark");
+Route::get('/Admin/MarkDelete/{id}', "MerkController@deleteMark");

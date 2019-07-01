@@ -37,12 +37,43 @@ class ItemController extends Controller
         return view('content_item_add_admin', compact('dataColor','dataMerk'));
     }
 
+    public function updateItem($id)
+    {
+        $dataItem = ModelItem::find($id);
+        $dataColor = ModelColor::all();
+        $dataMerk = ModelMerk::all();
+
+        return view('content_item_update_admin', compact('dataItem','dataColor','dataMerk'));
+    }
+
+    public function updateItemSave(Request $request, $id)
+    {
+        $dataItem = ModelItem::find($id);
+
+        if($dataItem->item_total == "0"){
+            $status = "Sold Out";
+        }else{
+            $status = "Ready";
+        }
+
+        $dataItem->item_name=$request->name;
+        $dataItem->item_total=$request->quantity;
+        $dataItem->item_price=$request->price;
+        $dataItem->item_status=$status;
+        $dataItem->item_description=$request->description;
+        $dataItem->color_id=$request->color;
+        $dataItem->merk_id=$request->merk;
+        $dataItem->save();
+
+        return redirect('/Admin/Item');
+    }
+
     public function saveItem(Request $request)
     {
         $data = new ModelItem();
-        $status = "SOLD OUT";
+        $status = "Sold Out";
         if($data->item_total == "0"||$data->item_total == null){
-            $status = "READY";
+            $status = "Ready";
         }
         $data->item_name=$request->name;
         $data->item_total=$request->quantity;
@@ -52,6 +83,13 @@ class ItemController extends Controller
         $data->color_id=$request->color;
         $data->merk_id=$request->merk;
         $data->save();
+
+        return redirect('/Admin/Item');
+    }
+
+    public function deleteItem($id)
+    {
+        $item = ModelItem::where('id_item', $id)->delete();
 
         return redirect('/Admin/Item');
     }
