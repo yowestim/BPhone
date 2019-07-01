@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\ModelUser;
 use App\ModelColor;
 use App\ModelMerk;
@@ -13,7 +14,12 @@ class ItemController extends Controller
     public function index(Request $request)
     {
         $user = ModelUser::all();
-        $item = ModelItem::all();
+        // $item = ModelItem::all();
+        // $color = ModelColor::all();
+        $item = DB::table('item')
+        ->join('color', 'item.color_id' , '=' , 'color.id_color')
+        ->join('merk', 'item.merk_id' , '=', 'merk.id_merk')
+        ->get();
         $loginStatus = $request->session()->has('loginStatus');
 
         if ($loginStatus == "true"){

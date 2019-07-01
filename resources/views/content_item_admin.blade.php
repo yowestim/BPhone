@@ -28,8 +28,8 @@
                             <td>{{$item->item_total}}</td>
                             <td>{{$item->item_price}}</td>
                             <td>{{$item->item_status}}</td>
-                            <td>{{$item->merk_id}}</td>
-                            <td>{{$item->color_id}}</td>
+                            <td>{{$item->merk_name}}</td>
+                            <td>{{$item->color_name}}</td>                                
                             <td>{{$item->item_description}}</td>
                             <td>{{$item->id_item}}</td>
                         </tr>
