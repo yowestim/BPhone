@@ -10,7 +10,7 @@
                 <div class="metric">
                     <span class="icon"><i class="fa fa-mobile"></i></span>
                     <p>
-                        <span class="number">1,252</span>
+                        <span class="number">{{$dataItem}}</span>
                         <span class="title">Item</span>
                     </p>
                 </div>
