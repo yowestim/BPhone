@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/Dashboard', "DashboardController@index");
+Route::get('/Dashboard/All', "DashboardController@allProduct");
+
 Route::get('/Admin', "DashboardController@adminLogin");
 Route::post('/loginPost', "DashboardController@postLogin");
 
