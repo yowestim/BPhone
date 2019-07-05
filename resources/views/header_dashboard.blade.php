@@ -29,8 +29,8 @@
     <link href="{{URL::to('/css/style.css')}}" rel="stylesheet">
 
     <!-- Google Font -->
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href={{URL::to('https://fonts.googleapis.com/css?family=Lato')}} rel='stylesheet' type='text/css'>
+    <link href={{URL::to('https://fonts.googleapis.com/css?family=Raleway')}} rel='stylesheet' type='text/css'>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -74,7 +74,7 @@
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                             <li>
-                                                <a href="#"><img src="img/flag/english.jpg" alt="">ENGLISH</a>
+                                                <a href="#"><img src={{URL::to("img/flag/english.jpg")}} alt="">ENGLISH</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -106,7 +106,7 @@
                             <!-- logo  -->
                             <div class="aa-logo">
                                 <!-- Text based logo -->
-                                <a href="index.html">
+                                <a href={{URL::to("index.html")}}>
                                     <span class="fa fa-shopping-cart"></span>
                                     <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
                                 </a>

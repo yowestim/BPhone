@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="aa-footer-bottom-area">
-                    <p>Designed by <a href="http://www.markups.io/">MarkUps.io</a></p>
+                    <p>Designed by <a href={{URL::to("http://www.markups.io/")}}>MarkUps.io</a></p>
                     <div class="aa-footer-payment">
                         <span class="fa fa-cc-mastercard"></span>
                         <span class="fa fa-cc-visa"></span>
@@ -44,7 +44,7 @@
 </div>
 
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src={{URL::to("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")}}></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="{{URL::to('/js/bootstrap.js')}}"></script>
 <!-- SmartMenus jQuery plugin -->
