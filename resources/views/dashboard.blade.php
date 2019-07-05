@@ -261,75 +261,8 @@
         </div>
     </section>
     <!-- / slider -->
-    <!-- Start Promo section -->
-    <section id="aa-promo">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="aa-promo-area">
-                        <div class="row">
-                            <!-- promo left -->
-                            <div class="col-md-5 no-padding">
-                                <div class="aa-promo-left">
-                                    <div class="aa-promo-banner">
-                                        <img src="img/promo-banner-1.jpg" alt="img">
-                                        <div class="aa-prom-content">
-                                            <span>75% Off</span>
-                                            <h4><a href="#">For Women</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- promo right -->
-                            <div class="col-md-7 no-padding">
-                                <div class="aa-promo-right">
-                                    <div class="aa-single-promo-right">
-                                        <div class="aa-promo-banner">
-                                            <img src="img/promo-banner-3.jpg" alt="img">
-                                            <div class="aa-prom-content">
-                                                <span>Exclusive Item</span>
-                                                <h4><a href="#">For Men</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="aa-single-promo-right">
-                                        <div class="aa-promo-banner">
-                                            <img src="img/promo-banner-2.jpg" alt="img">
-                                            <div class="aa-prom-content">
-                                                <span>Sale Off</span>
-                                                <h4><a href="#">On Shoes</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="aa-single-promo-right">
-                                        <div class="aa-promo-banner">
-                                            <img src="img/promo-banner-4.jpg" alt="img">
-                                            <div class="aa-prom-content">
-                                                <span>New Arrivals</span>
-                                                <h4><a href="#">For Kids</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="aa-single-promo-right">
-                                        <div class="aa-promo-banner">
-                                            <img src="img/promo-banner-5.jpg" alt="img">
-                                            <div class="aa-prom-content">
-                                                <span>25% Off</span>
-                                                <h4><a href="#">For Bags</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- / Promo section -->
     <!-- Products section -->
-    <section id="aa-product" style="margin-bottom:50px;">
+    <section id="aa-product" style="margin-bottom:50px;margin-top:50px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -346,23 +279,43 @@
                                     <div class="tab-pane fade in active" id="men">
                                         <ul class="aa-product-catg">
                                             <!-- start single product item -->
-                                            @for ($i = 0; $i < 8; $i++)
-                                                <li  style="width:auto;height:auto" >
-                                                    <figure>
-                                                        <a class="aa-product-img" href="#"><img src="/Item/{{$dataItem[$i]->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
-                                                        <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                                    </figure>
-                                                    <h4 class="aa-product-title"><a href="#">{{$dataItem[$i]->item_name}}</a></h4>
-                                                            <span class="aa-product-price">Rp.{{$dataItem[$i]->item_price}}</span>
-                                                    <div class="aa-product-hvr-content">
-                                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                                        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                                        <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                                                    </div>
-                                                    <!-- product badge -->
-                                                    <span class="aa-badge aa-sale" href="#">SALE!</span>
-                                                </li>
-                                            @endfor
+                                            @if ($item <= 8)
+                                                @foreach ($dataItem as $item)
+                                                    <li  style="width:auto;height:auto" >
+                                                        <figure>
+                                                            <a class="aa-product-img" href="#"><img src="/Item/{{$item->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
+                                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                        </figure>
+                                                        <h4 class="aa-product-title"><a href="#">{{$item->item_name}}</a></h4>
+                                                                <span class="aa-product-price">Rp.{{$item->item_price}}</span>
+                                                        <div class="aa-product-hvr-content">
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                                                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                                                        </div>
+                                                        <!-- product badge -->
+                                                        <span class="aa-badge aa-sale" href="#">SALE!</span>
+                                                    </li>
+                                                @endforeach
+                                            @else
+                                                @for ($i = 0; $i < 8; $i++)
+                                                    <li  style="width:auto;height:auto" >
+                                                        <figure>
+                                                            <a class="aa-product-img" href="#"><img src="/Item/{{$dataItem[$i]->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
+                                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                        </figure>
+                                                        <h4 class="aa-product-title"><a href="#">{{$dataItem[$i]->item_name}}</a></h4>
+                                                                <span class="aa-product-price">Rp.{{$dataItem[$i]->item_price}}</span>
+                                                        <div class="aa-product-hvr-content">
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
+                                                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                                                        </div>
+                                                        <!-- product badge -->
+                                                        <span class="aa-badge aa-sale" href="#">SALE!</span>
+                                                    </li>
+                                                @endfor
+                                            @endif
                                             <!-- start single product item -->
                                             
                                         </ul>

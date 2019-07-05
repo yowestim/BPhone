@@ -13,7 +13,8 @@ class DashboardController extends Controller
     {
         $dataItem = ModelItem::all();
         $dashboard = ModelUser::all();
-        return view('dashboard', compact('dataItem','dashboard'));
+        $item = ModelItem::count();
+        return view('dashboard', compact('item','dataItem','dashboard'));
     }
 
     public function adminLogin(Request $request){
