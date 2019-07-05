@@ -19,8 +19,9 @@ class DashboardController extends Controller
 
     public function allProduct()
     {
+        $item = ModelItem::count();
         $dataItem = ModelItem::all();
-        return view('dashboard_allproduct', compact('dataItem'));
+        return view('dashboard_allproduct', compact('dataItem', 'item'));
     }
 
     public function adminLogin(Request $request){
