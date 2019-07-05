@@ -52,4 +52,17 @@ class DashboardController extends Controller
             return redirect('/Admin');
         }
     }
+    public function LoginUsers(Request $request)
+    {
+        $username = $request->username;
+        $password = $request->password;
+
+        if(!Auth::attempt(['username'=>$username,'password'=>$password])){
+            $request->session()->put('loginStatus', 'true');
+            session(['username' => $username]);
+            return redirect('/Dashboard');
+        }else{
+            return redirect('/Dashboard');
+        }
+    }
 }
