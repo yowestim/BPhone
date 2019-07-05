@@ -40,10 +40,14 @@ class DashboardController extends Controller
         $username = $request->username;
         $password = $request->password;
 
-        if(!Auth::attempt(['username'=>$username,'password'=>$password])){
-            $request->session()->put('loginStatus', 'true');
-            session(['username' => $username]);
-            return redirect('/Admin/Dashboard');
+        if($username == 'admin' && $password == 'admin'){
+            if(!Auth::attempt(['username'=>$username,'password'=>$password])){
+                $request->session()->put('loginStatus', 'true');
+                session(['username' => $username]);
+                return redirect('/Admin/Dashboard');
+            }else{
+                return redirect('/Admin');
+            }
         }else{
             return redirect('/Admin');
         }

@@ -66,7 +66,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-								<li><a href="{{url('/Admin/Dashboard/Logout')}}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<li><a href="{{url('/Admin/Logout')}}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
 					</ul>
