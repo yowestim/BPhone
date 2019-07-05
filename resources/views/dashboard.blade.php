@@ -329,7 +329,7 @@
     </section>
     <!-- / Promo section -->
     <!-- Products section -->
-    <section id="aa-product">
+    <section id="aa-product" style="margin-bottom:50px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -346,17 +346,14 @@
                                     <div class="tab-pane fade in active" id="men">
                                         <ul class="aa-product-catg">
                                             <!-- start single product item -->
-                                            
-                                            @foreach ($dataItem as $item)
-                                                <li  style="width:auto;height:300px" >
+                                            @for ($i = 0; $i < 8; $i++)
+                                                <li  style="width:auto;height:auto" >
                                                     <figure>
-                                                        <a class="aa-product-img" href="#"><img src="/Item/{{$item->item_image}}" alt="polo shirt img"></a>
+                                                        <a class="aa-product-img" href="#"><img src="/Item/{{$dataItem[$i]->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
                                                         <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                                                        <figcaption>
-                                                            <h4 class="aa-product-title"><a href="#">{{$item->item_name}}</a></h4>
-                                                            <span class="aa-product-price">Rp.{{$item->item_price}}</span><span class="aa-product-price"><del>$65.50</del></span>
-                                                        </figcaption>
                                                     </figure>
+                                                    <h4 class="aa-product-title"><a href="#">{{$dataItem[$i]->item_name}}</a></h4>
+                                                            <span class="aa-product-price">Rp.{{$dataItem[$i]->item_price}}</span>
                                                     <div class="aa-product-hvr-content">
                                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
                                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
@@ -365,12 +362,12 @@
                                                     <!-- product badge -->
                                                     <span class="aa-badge aa-sale" href="#">SALE!</span>
                                                 </li>
-                                            @endforeach
+                                            @endfor
                                             <!-- start single product item -->
                                             
                                         </ul>
                                         <br>
-                                        <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+                                        <a class="aa-browse-btn" style="margin-top:50px;" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
                                     </div>
                                     <!-- / men product category -->
                                 </div>
