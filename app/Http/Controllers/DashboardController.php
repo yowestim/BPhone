@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ModelUser;
+use App\ModelItem;
 use Auth;
 
 class DashboardController extends Controller
 {
     public function index()
     {
+        $dataItem = ModelItem::all();
         $dashboard = ModelUser::all();
-        return view('dashboard', ['ModelUser'=>$dashboard]);
+        return view('dashboard', compact('dataItem','dashboard'));
     }
 
     public function adminLogin(Request $request){
