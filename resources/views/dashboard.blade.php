@@ -73,7 +73,7 @@
                                                 @foreach ($dataItem as $item)
                                                     <li  style="width:auto;height:auto" >
                                                         <figure>
-                                                            <a class="aa-product-img" href="#"><img src="/Item/{{$item->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
+                                                        <a class="aa-product-img" href="{{Url('/Dashboard/item', $item->id_item)}}"><img src="/Item/{{$item->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
                                                             <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                         </figure>
                                                         <h4 class="aa-product-title"><a href="#">{{$item->item_name}}</a></h4>
@@ -91,7 +91,7 @@
                                                 @for ($i = 0; $i < 8; $i++)
                                                     <li  style="width:auto;height:auto" >
                                                         <figure>
-                                                            <a class="aa-product-img" href="#"><img src="/Item/{{$dataItem[$i]->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
+                                                        <a class="aa-product-img" href="{{Url('/Dashboard/item', $dataItem[$i]->id_item)}}"><img src="/Item/{{$dataItem[$i]->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
                                                             <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                         </figure>
                                                         <h4 class="aa-product-title"><a href="#">{{$dataItem[$i]->item_name}}</a></h4>

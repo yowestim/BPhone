@@ -9,7 +9,7 @@
                     </a>
                 </div>
             </div>
-            <div class="simpleLens-thumbnails-container">
+            {{-- <div class="simpleLens-thumbnails-container">
                 <a href="#" class="simpleLens-thumbnail-wrapper" data-lens-image="/Item/{{$data->item_image}}" data-big-image="/Item/{{$data->item_image}}">
                     <img src="/Item/{{$data->item_image}}">
                 </a>
@@ -20,7 +20,7 @@
                 <a href="#" class="simpleLens-thumbnail-wrapper"  data-lens-image="/Item/{{$data->item_image}}" data-big-image="/Item/{{$data->item_image}}">
                     <img src="/Item/{{$data->item_image}}">
                 </a>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
