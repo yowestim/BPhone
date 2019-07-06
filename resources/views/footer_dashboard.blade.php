@@ -34,13 +34,13 @@
                 <button class="aa-browse-btn" type="submit">Login</button>
                 <label for="rememberme" class="rememberme"></label>
                 <div class="aa-register-now">
-                    Don't have an account?<a href="" data-target="#register-modal">Register now!</a>
+                    Don't have an account?<a href="" data-target="#register-modal" onclick="modal()" data-toggle="modal" >Register now!</a>
                 </div>
             </form>
         </div>
     </div>
     <!-- /.modal-content -->
-    <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" style="overflow-y: hidden; margin-top: -70px;" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -52,6 +52,11 @@
                         <input type="text" name="username" placeholder="Username or email">
                         <label>Password<span>*</span></label>
                         <input type="password" name="password" placeholder="Password">
+                        <button class="aa-browse-btn" type="submit">Register</button>
+                        <label for="rememberme" class="rememberme"></label>
+                        <div class="aa-register-now">
+                                Don't have an account?<a href="" data-target="#register-modal" onclick="modal()" data-toggle="modal" >Register now!</a>
+                        </div>
                     </form>
                     <button class="aa-btn" type="submit">Login</button>
                 </div>
@@ -81,6 +86,15 @@
 <script type="text/javascript" src="{{URL::to('/js/nouislider.js')}}"></script>
 <!-- Custom js -->
 <script src="{{URL::to('/js/custom.js')}}"></script>
+<script>
+    function modal(){
+    document.getElementById("login-modal").style.visibility = "hidden"; 
+    document.getElementById("register-modal").style.visibility = "visible"; 
+}
+function modalLogin(){
+    document.getElementById("login-modal").style.visibility = "visible"; 
+}
+</script>
 
 </body>
 

@@ -100,7 +100,7 @@
                                                 </ul>
                                             </div>
                                         @else
-                                            <a href="" data-toggle="modal" data-target="#login-modal">Login</a>
+                                            <a href="" onclick="modalLogin()" data-toggle="modal" data-target="#login-modal">Login</a>
                                         @endif
                                     </li>
                                 </ul>
