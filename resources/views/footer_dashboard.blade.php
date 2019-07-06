@@ -25,10 +25,11 @@
         <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4>Login or Register</h4>
-            <form class="aa-login-form" action="">
-                <label for="">Username<span>*</span></label>
-                <input type="text" name="username" placeholder="Username or email">
-                <label for="">Password<span>*</span></label>
+            <form class="aa-login-form" action="{{ url('/Dashboard/Login') }}" method="POST">
+                {{ csrf_field() }}
+                <label>Username<span>*</span></label>
+                <input type="text" name="username" placeholder="Username">
+                <label>Password<span>*</span></label>
                 <input type="password" name="password" placeholder="Password">
                 <button class="aa-browse-btn" type="submit">Login</button>
                 <label for="rememberme" class="rememberme"></label>
@@ -45,13 +46,14 @@
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4>Register</h4>
-                    <form class="aa-login-form" action="">
+                    <form class="aa-login-form" action="{{ url('/Dashboard/login') }}" method="POST">
+                        {{ csrf_field() }}
                         <label for="">Username<span>*</span></label>
                         <input type="text" name="username" placeholder="Username or email">
-                        <label for="">Password<span>*</span></label>
+                        <label>Password<span>*</span></label>
                         <input type="password" name="password" placeholder="Password">
-                        <button class="aa-browse-btn" type="submit">Login</button>
                     </form>
+                    <button class="aa-btn" type="submit">Login</button>
                 </div>
             </div>
         </div>

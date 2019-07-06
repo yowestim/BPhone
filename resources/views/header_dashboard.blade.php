@@ -87,7 +87,22 @@
                                     <li><a href="account.html">My Account</a></li>
                                     <!-- <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                                     <li class="hidden-xs"><a href="checkout.html">Checkout</a></li> -->
-                                    <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                    <li>
+                                        @if (!Session::get('username') == null)
+                                            <div class="dropdown">
+                                                <a class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                    {{Session::get('username')}}    
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                                    <li>
+                                                        <a href="{{URL('/Dashboard/Logout')}}">Logout</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        @else
+                                            <a href="" data-toggle="modal" data-target="#login-modal">Login</a>
+                                        @endif
+                                    </li>
                                 </ul>
                             </div>
                         </div>
