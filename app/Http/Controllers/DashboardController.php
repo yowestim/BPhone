@@ -53,7 +53,7 @@ class DashboardController extends Controller
             return redirect('/Admin');
         }
     }
-    
+
     public function loginUsers(Request $request)
     {
         $username = $request->username;
@@ -99,5 +99,21 @@ class DashboardController extends Controller
         $request->session()->forget('loginUser');
         $request->session()->forget('usernameUser');
         return redirect('/Dashboard');
+    }
+
+    public function cart()
+    {
+        $data = ModelItem::all();
+        $user = ModelUser::all();
+
+        return view('dashboard_cart', compact('data', 'user'));
+    }
+
+    public function checkOut()
+    {
+        $data = ModelItem::all();
+        $user = ModelUser::all();
+
+        return view('dashboard_checkout', compact('data', 'user'));
     }
 }
