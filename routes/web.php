@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/Dashboard/item/{id}', "DashboardController@itemProduct");
 Route::post('/Dashboard/Login', "DashboardController@loginUsers");
 Route::get('/Dashboard', "DashboardController@index");
 Route::get('/Dashboard/All', "DashboardController@allProduct");

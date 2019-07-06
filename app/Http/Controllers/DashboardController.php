@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\ModelUser;
 use App\ModelItem;
+use App\ModelColor;
+use App\ModelMerk;
 use Auth;
 
 class DashboardController extends Controller
@@ -23,6 +26,14 @@ class DashboardController extends Controller
         $item = ModelItem::count();
         $dataItem = ModelItem::all();
         return view('dashboard_allproduct', compact('dataItem', 'item'));
+    }
+    public function itemProduct($id)
+    {
+        $data = ModelItem::find($id);
+        $datacolor = ModelColor::find($data->color_id);
+        $datamerk = ModelMerk::find($data->merk_id);
+
+        return view('dashboard_detail_item', compact('data', 'datacolor', 'datamerk'));
     }
 
     public function adminLogin(Request $request){
