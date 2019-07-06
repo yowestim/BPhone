@@ -70,7 +70,7 @@
                                 <div class="aa-language">
                                     <div class="dropdown">
                                         <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <img src="img/flag/english.jpg" alt="english flag">ENGLISH
+                                            <img src="{{URL::to('img/flag/english.jpg')}}" alt="english flag">ENGLISH
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                             <li>
@@ -88,10 +88,10 @@
                                     <!-- <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                                     <li class="hidden-xs"><a href="checkout.html">Checkout</a></li> -->
                                     <li>
-                                        @if (!Session::get('username') == null)
+                                        @if (Session::get('loginUser') == 'true')
                                             <div class="dropdown">
                                                 <a class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    {{Session::get('username')}}    
+                                                    {{Session::get('usernameUser')}}    
                                                 </a>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                                     <li>
@@ -130,50 +130,55 @@
                             </div>
                             <!-- / logo  -->
                             <!-- cart box -->
-                            <div class="aa-cartbox">
                                 <!-- <a class="aa-cart-link" href="#">
                                     <span class="fa fa-shopping-basket"></span>
                                     <span class="aa-cart-title">SHOPPING CART</span>
                                     <span class="aa-cart-notify">2</span>
                                 </a> -->
-                                <div class="aa-cartbox-summary">
-                                    <ul>
-                                        <li>
-                                            <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
-                                            <div class="aa-cartbox-info">
+                                <div class="aa-cartbox">
+                                        <a class="aa-cart-link" href="{{URL('/Dashboard/Cart')}}">
+                                          <span class="fa fa-shopping-basket"></span>
+                                          <span class="aa-cart-title">SHOPPING CART</span>
+                                          <span class="aa-cart-notify">2</span>
+                                        </a>
+                                        <div class="aa-cartbox-summary">
+                                          <ul>
+                                            <li>
+                                              <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
+                                              <div class="aa-cartbox-info">
                                                 <h4><a href="#">Product Name</a></h4>
                                                 <p>1 x $250</p>
-                                            </div>
-                                            <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                        </li>
-                                        <li>
-                                            <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                                            <div class="aa-cartbox-info">
+                                              </div>
+                                              <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                                            </li>
+                                            <li>
+                                              <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
+                                              <div class="aa-cartbox-info">
                                                 <h4><a href="#">Product Name</a></h4>
                                                 <p>1 x $250</p>
-                                            </div>
-                                            <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                        </li>
-                                        <li>
-                                            <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                                            <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                                        </li>
-                                    </ul>
-                                    <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
-                                </div>
-                            </div>
+                                              </div>
+                                              <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                                            </li>                    
+                                            <li>
+                                              <span class="aa-cartbox-total-title">
+                                                Total
+                                              </span>
+                                              <span class="aa-cartbox-total-price">
+                                                $500
+                                              </span>
+                                            </li>
+                                          </ul>
+                                          <a class="aa-cartbox-checkout aa-primary-btn" href="{{URL('/Dashboard/CheckOut')}}">Checkout</a>
+                                        </div>
+                                      </div>
                             <!-- / cart box -->
                             <!-- search box -->
                             <div class="aa-search-box">
-                                <form action="">
-                                    <input type="text" name="" id="" placeholder="Search here ex. 'Iphone X' ">
-                                    <button type="submit"><span class="fa fa-search"></span></button>
-                                </form>
-                            </div>
+                                    <form action="">
+                                      <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                                      <button type="submit"><span class="fa fa-search"></span></button>
+                                    </form>
+                                  </div>
                             <!-- / search box -->
                         </div>
                     </div>
