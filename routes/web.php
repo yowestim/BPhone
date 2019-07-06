@@ -15,9 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/Dashboard/Login', "DashboardController@loginUsers");
 Route::get('/Dashboard', "DashboardController@index");
 Route::get('/Dashboard/All', "DashboardController@allProduct");
+Route::post('/Dashboard/Login', "DashboardController@loginUsers");
+Route::post('/Dashboard/Register', "DashboardController@registerUser");
 Route::get('/Dashboard/Logout', "DashboardController@logoutUser");
 
 Route::get('/Admin', "DashboardController@adminLogin");

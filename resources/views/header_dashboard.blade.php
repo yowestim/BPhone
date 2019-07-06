@@ -70,7 +70,7 @@
                                 <div class="aa-language">
                                     <div class="dropdown">
                                         <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <img src="img/flag/english.jpg" alt="english flag">ENGLISH
+                                            <img src="{{URL::to('img/flag/english.jpg')}}" alt="english flag">ENGLISH
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                             <li>
@@ -88,10 +88,10 @@
                                     <!-- <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
                                     <li class="hidden-xs"><a href="checkout.html">Checkout</a></li> -->
                                     <li>
-                                        @if (!Session::get('username') == null)
+                                        @if (Session::get('loginUser') == 'true')
                                             <div class="dropdown">
                                                 <a class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                    {{Session::get('username')}}    
+                                                    {{Session::get('usernameUser')}}    
                                                 </a>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                                     <li>

@@ -53,6 +53,7 @@ class DashboardController extends Controller
             return redirect('/Admin');
         }
     }
+    
     public function loginUsers(Request $request)
     {
         $username = $request->username;
@@ -60,19 +61,15 @@ class DashboardController extends Controller
         $user = ModelUser::where('username', $username)->first();
 
         if($user->username == $username && $user->password == $password){
-            if(!Auth::attempt(['username'=>$username,'password'=>$password])){
-                $request->session()->put('loginUser', 'true');
-                session(['username' => $username]);
-                return redirect('/Dashboard');
-            }else{
-                return redirect('/Dashboard');
-            }
+            $request->session()->put('loginUser', 'true');
+            session(['usernameUser' => $username]);
+            return redirect('/Dashboard');
         }else{
             return redirect('/Dashboard');
         }
     }
 
-    public function registerUser()
+    public function registerUser(Request $request)
     {
         $data = new ModelUser();
         $status = "user";
@@ -82,13 +79,25 @@ class DashboardController extends Controller
         $data->status = $status;
         $data->save();
 
+        $username = $request->username;
+        $password = $request->password;
+        $user = ModelUser::where('username', $username)->first();
+
+        if($user->username == $username && $user->password == $password){
+            $request->session()->put('loginUser', 'true');
+            session(['usernameUser' => $username]);
+            return redirect('/Dashboard');
+        }else{
+            return redirect('/Dashboard');
+        }
+
         return redirect('/Dashboard');
     }
 
     public function logoutUser(Request $request)
     {
         $request->session()->forget('loginUser');
-        $request->session()->forget('username');
+        $request->session()->forget('usernameUser');
         return redirect('/Dashboard');
     }
 }
