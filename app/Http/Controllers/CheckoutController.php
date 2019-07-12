@@ -19,7 +19,7 @@ class CheckoutController extends Controller
         ->where('transaction.id_transaction', Session::get('idUser'))
         ->where('transaction.status', "true")
         ->get();
-        
-        return view('dashboard_checkout', compact('data', 'user', 'cartdata'));
+
+        return view('dashboard_checkout', compact('item', 'user', 'cartdata'));
     }
 }
