@@ -53,23 +53,38 @@ class CartController extends Controller
                 $cart->item_id = $item->id_item;
                 $cart->transaction_id = $transactionid->id_transaction;
                 $cart->quantity = "1";
+                $cart->total_item = $item->item_price;
                 $cart->save();
 
                 return redirect('/Dashboard/Cart');
             }else{
                 if($transactiondata->status == "true"){
                     $transactionid = ModelTransaction::where('users_id', $userdata->id_users)->where('status', "true")->first();
-                    $cartdata = ModelCart::join('transaction','transaction.id_transaction','cart.transaction_id')->where('transaction.id_transaction', $transactionid->id_transaction)->where('status', "true")->first();
-                    if($cartdata->item_id = $id){
-                        $cart = ModelCart::where('id_cart', $cartdata->id_cart)->first();
+                    $cartdata = ModelCart::join('transaction','transaction.id_transaction','cart.transaction_id')
+                                            ->where('transaction.id_transaction', $transactionid->id_transaction)
+                                            ->where('cart.item_id', '=', $id)
+                                            ->where('status', "true")->get();
+                    if(count($cartdata) > 0){
+                        $cart = ModelCart::where('id_cart', $cartdata[0]->id_cart)->first();
                         $cart->quantity = $cart->quantity+1;
+                        $cart->total_item = ($cart->quantity+1)*$item->item_price;
                         $cart->save();
+
+                        $updateTransaction = ModelTransaction::find($cartdata[0]->id_transaction);
+                        $updateTransaction->total = $updateTransaction->total + $cart->total_item;
+                        $updateTransaction->save();
+
                     }else{
                         $cart = new ModelCart();
                         $cart->item_id = $item->id_item;
                         $cart->transaction_id = $transactionid->id_transaction;
                         $cart->quantity = "1";
+                        $cart->total_item = $item->item_price;
                         $cart->save();
+
+                        $updateTransaction = ModelTransaction::find($cartdata[0]->id_transaction);
+                        $updateTransaction->total = $updateTransaction->total + $cart->total_item;
+                        $updateTransaction->save();
                     }
                     return redirect('/Dashboard/Cart');
                 }else{
@@ -86,6 +101,7 @@ class CartController extends Controller
                     $cart->item_id = $item->id_item;
                     $cart->transaction_id = $transactionid->id_transaction;
                     $cart->quantity = "1";
+                    $cart->total_item = $item->item_price;
                     $cart->save();
 
                     return redirect('/Dashboard/Cart');

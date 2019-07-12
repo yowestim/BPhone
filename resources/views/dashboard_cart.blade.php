@@ -40,7 +40,7 @@
                     <tbody>
                     <tr>
                         <th>Total</th>
-                        <td>$450</td>
+                        <td>{{$item->total}}</td>
                     </tr>
                     </tbody>
                 </table>
