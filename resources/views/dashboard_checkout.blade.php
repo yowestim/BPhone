@@ -135,22 +135,22 @@
                             @foreach ($cartdata as $item)
                                 <tr>
                                     <td>{{$item->item_name}}<strong> x  {{$item->quantity}}</strong></td>
-                                    <td>$150</td>
+                                    <td>Rp.{{$item->total_item}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                             <th>Subtotal</th>
-                            <td>$750</td>
+                            <td>Rp.{{$item->total}}</td>
                             </tr>
                             <tr>
                             <th>Tax</th>
-                            <td>$35</td>
+                            <td>Rp.35.000</td>
                             </tr>
                             <tr>
                             <th>Total</th>
-                            <td>$785</td>
+                            <td>Rp.{{$item->total+35000}}</td>
                             </tr>
                         </tfoot>
                         </table>
