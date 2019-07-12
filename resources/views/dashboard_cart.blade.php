@@ -12,6 +12,7 @@
                         <tr>
                             {{-- <th></th> --}}
                             <th></th>
+                            <th></th>
                             <th>Product</th>
                             <th>Price</th>
                             <th>Quantity</th>
@@ -40,7 +41,11 @@
                     <tbody>
                     <tr>
                         <th>Total</th>
-                        <td>{{$item->total}}</td>
+                        <td>@if (empty($trans->total))
+                            Rp.0
+                        @else
+                            Rp.{{$trans->total}}
+                        @endif</td>
                     </tr>
                     </tbody>
                 </table>

@@ -17,6 +17,8 @@ class CartController extends Controller
     {
         $data = ModelItem::all();
         $user = ModelUser::all();
+        $trans = ModelTransaction::where('transaction.users_id', Session::get('idUser'))
+        ->where('transaction.status', "true")->first();
         $cart = DB::table('cart')
         ->join('transaction','transaction.id_transaction','cart.transaction_id')
         ->join('item', 'item.id_item' , '=' , 'cart.item_id')
@@ -24,12 +26,26 @@ class CartController extends Controller
         ->where('transaction.status', "true")
         ->get();
 
-        return view('dashboard_cart', compact('data', 'user', 'cart'));
+        return view('dashboard_cart', compact('data', 'user', 'cart', 'trans'));
     }
+    
     public function deleteCart($id)
     {
         $dataCart = ModelCart::where('id_cart', $id)->delete();
 
+        $dataTransactionCart = ModelCart::join('transaction','transaction.id_transaction','cart.transaction_id')
+        ->where('transaction.users_id', Session::get('idUser'))
+        ->where('transaction.status', "true")->first();
+
+        if(empty($dataTransaction)){
+            $dataTransaction = ModelTransaction::where('users_id',  Session::get('idUser'))
+            ->where('status', "true")->first();
+            $dataTransaction->status = "false";
+            $dataTransaction->save();
+        }else{
+            return redirect('/Dashboard/Cart');
+        }
+        
         return redirect('/Dashboard/Cart');
     }
 
@@ -88,8 +104,8 @@ class CartController extends Controller
                         $cart->total_item = $item->item_price;
                         $cart->save();
 
-                        $updateTransaction = ModelTransaction::find($cartdata->id_transaction);
-                        $updateTransaction->total = $updateTransaction->total + $cart->total_item;
+                        $updateTransaction = ModelTransaction::find($transactionid->id_transaction);
+                        $updateTransaction->total = $updateTransaction->total + $item->item_price;
                         $updateTransaction->save();
                     }
                     return redirect('/Dashboard/Cart');

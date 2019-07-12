@@ -142,7 +142,7 @@
                         <tfoot>
                             <tr>
                             <th>Subtotal</th>
-                            <td>Rp.{{$item->total}}</td>
+                            <td>Rp.{{$trans->total}}</td>
                             </tr>
                             <tr>
                             <th>Tax</th>
@@ -150,7 +150,7 @@
                             </tr>
                             <tr>
                             <th>Total</th>
-                            <td>Rp.{{$item->total+35000}}</td>
+                            <td>Rp.{{$trans->total+35000}}</td>
                             </tr>
                         </tfoot>
                         </table>
