@@ -10,7 +10,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th></th>
+                            {{-- <th></th> --}}
                             <th></th>
                             <th>Product</th>
                             <th>Price</th>
@@ -21,7 +21,7 @@
                         <tbody>
                             @foreach ($cart as $item)
                                 <tr>
-                                    <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
+                                    <td><a class="remove" href="{{URL('/Dashboard/RemoveCart',$item->id_cart)}}"><fa class="fa fa-close"></fa></a></td>
                                     <td><img height="70px" src="{{ url('/Item/'.$item->item_image) }}"></td>
                                     <td><a class="aa-cart-title" href="#">{{$item->item_name}}</a></td>
                                     <td>Rp.{{$item->item_price}}</td>

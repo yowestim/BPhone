@@ -74,15 +74,12 @@
                                                     <li  style="width:auto;height:auto" >
                                                         <figure>
                                                         <a class="aa-product-img" href="{{Url('/Dashboard/item', $item->id_item)}}"><img src="/Item/{{$item->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
-                                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                            <a class="aa-add-card-btn" href="{{URL('/Dashboard/CartAdd', $item->id_item)}}"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                         </figure>
                                                         <h4 class="aa-product-title"><a href="#">{{$item->item_name}}</a></h4>
-                                                                <span class="aa-product-price">Rp.{{$item->item_price}}</span>
+                                                                <span class="aa-product-price">Rp.{{number_format($item->item_price)}}</span>
                                                         <div class="aa-product-hvr-content">
-                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                                                        </div>
+                                                            </div>
                                                         <!-- product badge -->
                                                         <span class="aa-badge aa-sale" href="#">SALE!</span>
                                                     </li>
@@ -92,14 +89,11 @@
                                                     <li  style="width:auto;height:auto" >
                                                         <figure>
                                                         <a class="aa-product-img" href="{{Url('/Dashboard/item', $dataItem[$i]->id_item)}}"><img src="/Item/{{$dataItem[$i]->item_image}}" style="width:250px;height:300px" alt="polo shirt img"></a>
-                                                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                            <a class="aa-add-card-btn" href="{{URL('/Dashboard/CartAdd', $dataItem[$i]->id_item)}}"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                                                         </figure>
                                                         <h4 class="aa-product-title"><a href="#">{{$dataItem[$i]->item_name}}</a></h4>
-                                                                <span class="aa-product-price">Rp.{{$dataItem[$i]->item_price}}</span>
+                                                                <span class="aa-product-price">Rp.{{number_format($dataItem[$i]->item_price)}}</span>
                                                         <div class="aa-product-hvr-content">
-                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                                                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
                                                         </div>
                                                         <!-- product badge -->
                                                         <span class="aa-badge aa-sale" href="#">SALE!</span>

@@ -26,6 +26,12 @@ class CartController extends Controller
 
         return view('dashboard_cart', compact('data', 'user', 'cart'));
     }
+    public function deleteCart($id)
+    {
+        $dataCart = ModelCart::where('id_cart', $id)->delete();
+
+        return redirect('/Dashboard/Cart');
+    }
 
     public function addCart($id, Request $request)
     {

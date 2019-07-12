@@ -34,7 +34,7 @@
             <p class="aa-product-avilability" style="font-size: 15px;">Status: <span>{{$data->item_status}}</span></p>
         </div>
         <br>
-    <p >{{$data->item_description}}</p>
+    <div style="width:20px; height: 70px; border-color: black;">{{$data->item_description}}</div>
     <br>
         <h4>{{$datacolor->color_name}}</h4>
         <h4>{{$datamerk->merk_name}}</h4>
