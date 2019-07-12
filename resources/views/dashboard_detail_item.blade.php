@@ -49,7 +49,7 @@
             </p>
         </div>
         <div class="aa-prod-view-bottom">
-            <a href="#" class="aa-add-to-cart-btn" style="padding: 20px; color: #ff6666"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+            <a href="{{URL('/Dashboard/CartAdd', $data->id_item)}}" class="aa-add-to-cart-btn" style="padding: 20px; color: #ff6666"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
             <a href="#" class="aa-add-to-cart-btn" style="padding: 20px; margin-left: 10px;">Purchase</a>
             <br>
             <br>

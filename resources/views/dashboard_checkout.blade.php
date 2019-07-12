@@ -132,18 +132,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <td>T-Shirt <strong> x  1</strong></td>
-                            <td>$150</td>
-                            </tr>
-                            <tr>
-                            <td>Polo T-Shirt <strong> x  1</strong></td>
-                            <td>$250</td>
-                            </tr>
-                            <tr>
-                            <td>Shoes <strong> x  1</strong></td>
-                            <td>$350</td>
-                            </tr>
+                            @foreach ($cartdata as $item)
+                                <tr>
+                                    <td>{{$item->item_name}}<strong> x  {{$item->quantity}}</strong></td>
+                                    <td>$150</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                         <tfoot>
                             <tr>

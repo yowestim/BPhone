@@ -15,10 +15,11 @@ class CreateModelCartTable extends Migration
     {
         Schema::create('cart', function (Blueprint $table) {
             $table->bigIncrements('id_cart');
+            $table->unsignedBigInteger('transaction_id');
+            $table->foreign('transaction_id')->references('id_transaction')->on('transaction');
             $table->unsignedBigInteger('item_id');
             $table->foreign('item_id')->references('id_item')->on('item');
-            $table->unsignedBigInteger('transaction_id');
-	        $table->foreign('transaction_id')->references('id_transaction')->on('transaction');
+            $table->string('quantity', 20);
             $table->timestamps();
         });
     }

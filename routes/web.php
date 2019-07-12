@@ -21,9 +21,10 @@ Route::get('/Dashboard', "DashboardController@index");
 Route::get('/Dashboard/All', "DashboardController@allProduct");
 Route::post('/Dashboard/Login', "DashboardController@loginUsers");
 Route::post('/Dashboard/Register', "DashboardController@registerUser");
-Route::get('/Dashboard/Cart', "DashboardController@cart");
-Route::get('/Dashboard/CheckOut', "DashboardController@checkOut");
 Route::get('/Dashboard/Logout', "DashboardController@logoutUser");
+Route::get('/Dashboard/Cart', "CartController@index");
+Route::get('/Dashboard/CartAdd/{id}', "CartController@addCart");
+Route::get('/Dashboard/CheckOut', "CheckoutController@index");
 
 Route::get('/Admin', "DashboardController@adminLogin");
 Route::post('/loginPost', "DashboardController@postLogin");

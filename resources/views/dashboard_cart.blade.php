@@ -19,30 +19,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                            <td><a href="#"><img src="img/man/polo-shirt-1.png" alt="img"></a></td>
-                            <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                            <td>$250</td>
-                            <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                            <td>$250</td>
-                        </tr>
-                        <tr>
-                            <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                            <td><a href="#"><img src="img/man/polo-shirt-2.png" alt="img"></a></td>
-                            <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                            <td>$150</td>
-                            <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                            <td>$150</td>
-                        </tr>
-                        <tr>
-                            <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
-                            <td><a href="#"><img src="img/man/polo-shirt-3.png" alt="img"></a></td>
-                            <td><a class="aa-cart-title" href="#">Polo T-Shirt</a></td>
-                            <td>$50</td>
-                            <td><input class="aa-cart-quantity" type="number" value="1"></td>
-                            <td>$50</td>
-                        </tr>
+                            @foreach ($cart as $item)
+                                <tr>
+                                    <td><a class="remove" href="#"><fa class="fa fa-close"></fa></a></td>
+                                    <td><img height="70px" src="{{ url('/Item/'.$item->item_image) }}"></td>
+                                    <td><a class="aa-cart-title" href="#">{{$item->item_name}}</a></td>
+                                    <td>Rp.{{$item->item_price}}</td>
+                                    <td>{{$item->quantity}}</td>
+                                    <td>Rp.{{$item->item_price*$item->quantity}}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     </div>
@@ -52,10 +38,6 @@
                 <h4>Cart Totals</h4>
                 <table class="aa-totals-table">
                     <tbody>
-                    <tr>
-                        <th>Subtotal</th>
-                        <td>$450</td>
-                    </tr>
                     <tr>
                         <th>Total</th>
                         <td>$450</td>
