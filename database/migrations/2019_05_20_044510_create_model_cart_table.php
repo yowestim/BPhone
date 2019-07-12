@@ -20,6 +20,7 @@ class CreateModelCartTable extends Migration
             $table->unsignedBigInteger('item_id');
             $table->foreign('item_id')->references('id_item')->on('item');
             $table->string('quantity', 20);
+            $table->string('total_item',20);
             $table->timestamps();
         });
     }
