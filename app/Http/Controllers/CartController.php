@@ -88,7 +88,7 @@ class CartController extends Controller
                         $cart->total_item = $item->item_price;
                         $cart->save();
 
-                        $updateTransaction = ModelTransaction::find($cartdata[0]->id_transaction);
+                        $updateTransaction = ModelTransaction::find($cartdata->id_transaction);
                         $updateTransaction->total = $updateTransaction->total + $cart->total_item;
                         $updateTransaction->save();
                     }
